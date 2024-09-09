@@ -1,10 +1,7 @@
 name: Build code and call reusable deploy workflow 1
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
       
 jobs:
   build-job:
