@@ -9,22 +9,18 @@ jobs:
 
     # Job-level environment variables
     env:
-      MY_VAR: "Job Level Value"
-      COMMON_VAR: "Job Level Common Value"
+      VAR_1: "Job level variable value"
 
     steps:
-      - name: Display job-level variables
+      - name: Display job-level variable
         run: |
-          echo "MY_VAR: $MY_VAR"
-          echo "COMMON_VAR: $COMMON_VAR"
+          echo "VAR_1: $VAR_1"
 
-      # Override MY_VAR at the step level
-      - name: Override MY_VAR at step level
+      - name: Override VAR_1 at step level
         env:
-          MY_VAR: "Step Level Value" # This will override the job-level MY_VAR
+          VAR_1: "Step level variable value" # This will override the job-level VAR_1
         run: |
-          echo "MY_VAR: $MY_VAR"
-          echo "COMMON_VAR: $COMMON_VAR" # COMMON_VAR will still use the job-level value
+          echo "VAR_1: $VAR_1"
 
-      - name: show overridden value
-        run: echo "Value of MY_VAR is $MY_VAR"
+      - name: Show VAR_1 value after step override
+        run: echo "Value of VAR_1 is $VAR_1"
