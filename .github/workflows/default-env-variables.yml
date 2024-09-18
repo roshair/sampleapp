@@ -1,0 +1,15 @@
+name: Default Environment Variables
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Linux-Runner-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
+
+  Windows-Runner-Job:
+    runs-on: windows-latest
+    steps:
+      - run: env
