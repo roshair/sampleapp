@@ -6,10 +6,18 @@ on:
 jobs:
   Linux-Runner-Job:
     runs-on: ubuntu-latest
+    
     steps:
       - run: env
 
+      - run: echo "Home directory is $HOME" # or $env:USERPROFILE on Windows
+      - run: echo "Home directory is ${{ runner.home }}"
+
   Windows-Runner-Job:
     runs-on: windows-latest
+    
     steps:
       - run: env
+
+      - run: echo "Home directory is $env:USERPROFILE"
+      - run: echo "Home directory is ${{ runner.home }}"
