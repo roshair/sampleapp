@@ -25,3 +25,6 @@ jobs:
         run: |
           echo "MY_VAR: $MY_VAR"
           echo "COMMON_VAR: $COMMON_VAR" # COMMON_VAR will still use the job-level value
+
+      - name: show overridden value
+        run: echo "Value of MY_VAR is $MY_VAR"
