@@ -10,7 +10,7 @@ jobs:
     steps:
 
       - name: Check Event Name
-        run: echo "Event that triggered the workflow is $GITHUB_EVENT_NAME"
+        run: echo "Event that triggered the workflow is $env:GITHUB_EVENT_NAME"
       
       - name: checkout code
         uses: actions/checkout@v4.1.7
