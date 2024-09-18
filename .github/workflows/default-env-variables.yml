@@ -51,4 +51,4 @@ jobs:
         run: echo "Home directory is $env:USERPROFILE"
       
       - name: Print Home Directory (Context Variable)      
-        run: echo "Home directory is ${{ runner.home }}"
+        run: echo "Home directory is ${{ runner.user_profile }}"
