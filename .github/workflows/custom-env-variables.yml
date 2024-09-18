@@ -25,7 +25,3 @@ jobs:
         run: |
           echo "MY_VAR: $MY_VAR"
           echo "COMMON_VAR: $COMMON_VAR" # COMMON_VAR will still use the job-level value
-
-      # Check if value changed
-      - name: Print MY_VAR value
-        run: echo "MY_VAR: $MY_VAR"
