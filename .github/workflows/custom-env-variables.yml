@@ -1,15 +1,31 @@
-name: Pass Custom Variables In Workflow Step
+name: Custom Env Variables
 
 on:
   workflow_dispatch:
 
 jobs:
-  Linux-Runner-Job:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - run: env
 
-  Windows-Runner-Job:
-    runs-on: windows-latest
+    # Job-level environment variables
+    env:
+      MY_VAR: "Job Level Value"
+      COMMON_VAR: "Job Level Common Value"
+
     steps:
-      - run: env
+      - name: Display job-level variables
+        run: |
+          echo "MY_VAR: $MY_VAR"
+          echo "COMMON_VAR: $COMMON_VAR"
+
+      # Override MY_VAR at the step level
+      - name: Override MY_VAR at step level
+        env:
+          MY_VAR: "Step Level Value" # This will override the job-level MY_VAR
+        run: |
+          echo "MY_VAR: $MY_VAR"
+          echo "COMMON_VAR: $COMMON_VAR" # COMMON_VAR will still use the job-level value
+
+      # Check if value changed
+      - name: Print MY_VAR value
+        run: echo "MY_VAR: $MY_VAR"
