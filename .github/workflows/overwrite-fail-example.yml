@@ -3,6 +3,9 @@ name: Overwrite Job Variable (fails)
 on:
   workflow_dispatch:
 
+env:
+  WORKFLOW_VAR_1: "Workflow level variable"
+  
 jobs:
   build:
     runs-on: ubuntu-latest
