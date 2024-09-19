@@ -17,7 +17,7 @@ jobs:
         run: echo "Trigger event is $GITHUB_EVENT_NAME"
 
       - name: Print Event (Context Variable)
-        run: echo "Home directory is ${{ github.event_name }}"
+        run: echo "Trigger event is ${{ github.event_name }}"
 
       - name: Conditional for pull requests
         run: echo "This is being triggered from a pull request!"
@@ -43,7 +43,7 @@ jobs:
         run: echo "Trigger event is $env:GITHUB_EVENT_NAME"
 
       - name: Print Event (Context Variable)
-        run: echo "Home directory is ${{ github.event_name }}"
+        run: echo "Trigger event is ${{ github.event_name }}"
 
 # print home directory
         
