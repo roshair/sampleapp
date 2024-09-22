@@ -29,9 +29,10 @@ jobs:
         with:
           # Artifact name
           name: .net-app
-          path: ${{runner.temp}}/myapp
+          path: ${{ runner.temp }}/myapp
 
       - name: Display output of upload-artifact
         run: |
-          Write-Output ${{ steps.upload-artifact.outputs.artifact-id }}
+          Write-Output "The artifact-id is ${{ steps.upload-artifact.outputs.artifact-id }}" |
+          Write-Output "The artifact-url is ${{ steps.upload-artifact.outputs.artifact-url }}"
         shell: pwsh
